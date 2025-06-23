@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viúva Negra - Marvel</title>
+    <style>
+        /* Reset e estilos globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #111;
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        a {
+            color: #e62429;
+            text-decoration: none;
+        }
+        
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://i.annihil.us/u/prod/marvel/i/mg/f/30/50fec2e6a2233.jpg') center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #fff;
+            text-shadow: 2px 2px 5px #000;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            color: #e62429;
+        }
+        
+        /* Navegação */
+        nav {
+            background-color: #000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 15px 0;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #e62429;
+        }
+        
+        /* Conteúdo principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #e62429;
+            font-size: 2.5rem;
+        }
+        
+        .about {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .about-img {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #e62429;
+        }
+        
+        /* Habilidades */
+        .skills {
+            background-color: #222;
+            padding: 60px 0;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background-color: #333;
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .skill-icon {
+            font-size: 3rem;
+            color: #e62429;
+            margin-bottom: 20px;
+        }
+        
+        /* Filmes */
+        .movies {
+            text-align: center;
+        }
+        
+        .movie-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .movie-card {
+            width: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .movie-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .movie-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        
+        .movie-info {
+            padding: 15px;
+            background-color: #222;
+        }
+        
+        /* Rodapé */
+        footer {
+            background-color: #000;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 60px;
+        }
+        
+        .social-links {
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 10px;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #e62429;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .about-img, .about-text {
+                min-width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Marvel_Logo.svg/2560px-Marvel_Logo.svg.png" alt="Marvel Logo" class="logo">
+        <h1>Viúva Negra</h1>
+        <p class="subtitle">Espiã, Assassina, Heroína</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#movies">Filmes</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="about" class="container">
+            <h2 class="section-title">Sobre Natasha Romanoff</h2>
+            <div class="about">
+                <div class="about-img">
+                    <img src="https://i.annihil.us/u/prod/marvel/i/mg/3/10/5e8e7dfb6f8e0.jpg" alt="Viúva Negra">
+                </div>
+                <div class="about-text">
+                    <h3>A Espiã Suprema</h3>
+                    <p>Natasha Romanoff, também conhecida como Viúva Negra, é uma espiã altamente treinada, ex-agente da KGB e membro dos Vingadores. Nascida na Rússia, ela foi criada no programa "Quarto Vermelho" onde foi submetida a treinamento intensivo e experimentos que retardaram seu envelhecimento e aumentaram sua imunidade.</p>
+                    <p>Após desertar para os Estados Unidos, Natasha se tornou uma agente da S.H.I.E.L.D. e posteriormente uma super-heroína, lutando ao lado dos Vingadores contra as maiores ameaças ao planeta. Sua inteligência, habilidades de combate e capacidade estratégica a tornam uma das membros mais valiosos da equipe.</p>
+                    <p>Apesar de seu passado sombrio como assassina, Natasha busca redenção através de seus atos heroicos, provando repetidamente que pode ser confiável e que coloca o bem maior acima de tudo.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title">Habilidades</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-fist-raised"></i>
+                        </div>
+                        <h3>Artes Marciais</h3>
+                        <p>Mestra em mais de 30 estilos de combate corpo a corpo, incluindo sambo, judô, karatê e boxe.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-gun"></i>
+                        </div>
+                        <h3>Armas e Equipamentos</h3>
+                        <p>Especialista no uso de pistolas, rifles, facas e seus braceletes que emitem choques elétricos.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Espionagem</h3>
+                        <p>Habilidade em infiltração, disfarces, hacking e interrogatório. Fluente em múltiplos idiomas.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <i class="fas fa-running"></i>
+                        </div>
+                        <h3>Agilidade</h3>
+                        <p>Reflexos, velocidade e flexibilidade sobre-humanos graças ao soro do Quarto Vermelho.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="movies" class="container movies">
+            <h2 class="section-title">Aparições nos Filmes</h2>
+            <div class="movie-gallery">
+                <div class="movie-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTM3OTUwMDYwNl5BMl5BanBnXkFtZTcwNTUyNzc3Nw@@._V1_.jpg" alt="Homem de Ferro 2">
+                    <div class="movie-info">
+                        <h3>Homem de Ferro 2 (2010)</h3>
+                        <p>Primeira aparição da Viúva Negra no MCU</p>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTk2NTI1MTU4N15BMl5BanBnXkFtZTcwODg0OTY0Nw@@._V1_.jpg" alt="Os Vingadores">
+                    <div class="movie-info">
+                        <h3>Os Vingadores (2012)</h3>
+                        <p>Membro fundador dos Vingadores</p>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTM4OGJmNWMtOTM4Ni00NTE3LTg3MDItZmQxYjc4N2JhNmUxXkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_.jpg" alt="Capitão América: O Soldado Invernal">
+                    <div class="movie-info">
+                        <h3>Capitão América 2 (2014)</h3>
+                        <p>Parceira de Capitão América</p>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_.jpg" alt="Vingadores: Ultimato">
+                    <div class="movie-info">
+                        <h3>Vingadores: Ultimato (2019)</h3>
+                        <p>Sacrifício pela Joia da Alma</p>
+                    </div>
+                </div>
+                
+                <div class="movie-card">
+                    <img src="https://m.media-amazon.com/images/M/MV5BNjRmNDI5MjMtMmFhZi00YzcwLWI4ZGItMGI2MjI0N2Q3YmIwXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg" alt="Viúva Negra">
+                    <div class="movie-info">
+                        <h3>Viúva Negra (2021)</h3>
+                        <p>Filme solo da heroína</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2023 Marvel. Todos os direitos reservados.</p>
+        <p>Página criada para fins educacionais</p>
+    </footer>
+</body>
+</html>
